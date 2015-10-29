@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BloggrWith2fa</title>
+  <title>BlogAppWith2fa</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= render 'layouts/navbar' %>
+  </header>
 
-<%= yield %>
+  <div class="container container-fluid">
+    <%= render 'layouts/flash_messages' %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

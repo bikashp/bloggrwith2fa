@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Bootstrap for CSS
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+# Devise for authentication
+gem 'devise'
+# Two factor authentication
+gem 'two_factor_authentication'
+# QR code generator
+#gem 'rqrcode-rails3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
