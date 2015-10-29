@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :two_factor_authentications do
     collection do
       get 'auth'
-      post 'enable'
+      get 'sms'
+      post 'save_phone_no'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

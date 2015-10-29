@@ -1,7 +1,7 @@
 <h2>Add Bloggr to your two-factor authentication app</h2>
 You will need to install a two-factor authentication application on your phone.
 <span>
-Click <%= link_to "here", new_two_factor_authentication_path %> if you want to get your authentication code other way.
+Click <%= link_to "here", new_two_factor_authentication_path %> if you want to get your authentication code different way.
 </span>
 <div>
   <b>1. Scan barcode</b> <br />
@@ -18,7 +18,7 @@ Click <%= link_to "here", new_two_factor_authentication_path %> if you want to g
 </p>
 
 <div>
-  <%= form_tag(enable_two_factor_authentications_path, method: "post", class: "form") do %>
+  <%= form_tag(user_two_factor_authentication_path, method: "put", class: "form") do %>
     <div class="form-group">
       <%= label_tag(:code, "<b>2. Enter the six-digit code from the application</b>".html_safe) %>
       <%= text_field_tag(:code, nil, class: "form-control", placeholder: "123456") %>

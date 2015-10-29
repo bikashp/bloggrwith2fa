@@ -1,0 +1,12 @@
+<h2>Enter your personal code</h2>
+<p>
+  If you are having trouble getting the code, click <%= link_to "here", new_two_factor_authentication_path %> to select the option best fits you.
+</p>
+
+<%= form_tag([resource_name, :two_factor_authentication], method: :put, class: "form-inline") do %>
+  <div class="form-group">
+    <%= text_field_tag(:code, nil, class: "form-control") %>
+    <%= submit_tag("Submit", class: "btn btn-success")%>
+  </div>
+<% end %>
+

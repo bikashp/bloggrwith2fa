@@ -1,0 +1,5 @@
+<% if current_user.errors.any? %>
+  $('#result').html('<span class="error"> We encountered error while trying to save your phone and send code.</span>')
+<% else %>
+  $('#result').html('<span class="success"> Your phone no. is saved successfully and code is sent.</span>')
+<% end %>
