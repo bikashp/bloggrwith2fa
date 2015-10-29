@@ -30,7 +30,7 @@ gem 'devise'
 # Two factor authentication
 gem 'two_factor_authentication'
 # QR code generator
-#gem 'rqrcode-rails3'
+gem 'rqrcode-rails3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
