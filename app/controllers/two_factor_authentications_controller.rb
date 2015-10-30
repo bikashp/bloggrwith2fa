@@ -2,7 +2,7 @@ class TwoFactorAuthenticationsController < ApplicationController
   skip_before_filter :handle_two_factor_authentication
 
   def auth
-    @qr_provisioning = current_user.provisioning_uri
+    @qr_provisioning = current_user.provisioning_uri(current_user.email, issuer: 'Bloggr ')
     current_user.code_via = User::CODE_DELIVERY[:auth]
     current_user.save
   end
