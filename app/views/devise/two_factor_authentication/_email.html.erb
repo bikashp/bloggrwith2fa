@@ -1,0 +1,7 @@
+You chose to get authentication code via Email.
+<div>
+  <%= form_tag(send_code_two_factor_authentications_path, method: "post", class: "form-inline", remote: true) do %>
+    <%= submit_tag("Send code", class: "btn btn-primary") %>
+    <span id="result"></span>
+  <% end %>
+</div>

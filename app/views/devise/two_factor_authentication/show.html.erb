@@ -3,6 +3,20 @@
   If you are having trouble getting the code, click <%= link_to "here", new_two_factor_authentication_path %> to select the option best fits you.
 </p>
 
+<div>
+  <% if current_user.code_via == User::CODE_DELIVERY[:auth] %>
+    You chose to get authentication code via Authenticator app. Please use that.
+  <% elsif current_user.code_via == User::CODE_DELIVERY[:sms] %>
+    <%= render :partial => "sms" %>
+  <% elsif current_user.code_via == User::CODE_DELIVERY[:email] %>
+    <%= render :partial => "email" %>
+  <% else %>
+    You have not yet selected the preferred way to get your authentication, click <%= link_to "here", new_two_factor_authentication_path %> to select the option that best fits you.
+  <% end %>
+</div>
+
+<hr />
+
 <%= form_tag([resource_name, :two_factor_authentication], method: :put, class: "form-inline") do %>
   <div class="form-group">
     <%= text_field_tag(:code, nil, class: "form-control") %>

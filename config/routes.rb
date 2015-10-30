@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     collection do
       get 'auth'
       get 'sms'
-      post 'save_phone_no'
+      get 'email'
+      post 'send_code'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

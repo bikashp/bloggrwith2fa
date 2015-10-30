@@ -1,0 +1,7 @@
+var content = "";
+<% if current_user.errors.any? %>
+  content = "<span class='error'><%=  current_user.errors.full_messages.join(",") %></span>";
+<% else %>
+  content = "<span class='success'><%= @msg %></span>";
+<% end %>
+$('#result').html(content);

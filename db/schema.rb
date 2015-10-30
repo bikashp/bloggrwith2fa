@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029211102) do
+ActiveRecord::Schema.define(version: 20151030001126) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151029211102) do
     t.string   "otp_secret_key"
     t.integer  "second_factor_attempts_count", default: 0
     t.string   "phone"
+    t.integer  "code_via",                     default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

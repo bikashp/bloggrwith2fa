@@ -1,16 +1,12 @@
-<h2>Enter your phone number that you want to get SMS on </h2>
+<h2>Get code to your email</h2>
 Click <%= link_to "here", new_two_factor_authentication_path %> if you want to get your authentication code different way.
 <br /><br />
 
-
+Click the button below and code will be sent to your email address <%= current_user.email %>
 <div>
   <%= form_tag(two_factor_authentications_path, method: "post", class: "form-inline", remote: true) do %>
-    <div class="form-group">
-      <%= label_tag(:phone, "<b>1. Enter your Phone No.</b>".html_safe) %>
-      <%= text_field_tag(:phone, nil, class: "form-control", placeholder: "Include Country Code") %>
-      <%= hidden_field_tag(:via, nil, value: User::CODE_DELIVERY[:sms]) %>
-    </div>
-    <%= submit_tag("Save and send code", class: "btn btn-primary") %>
+    <%= hidden_field_tag(:via, nil, value: User::CODE_DELIVERY[:email]) %>
+    <%= submit_tag("Send code to my email", class: "btn btn-primary") %>
     <span id="result"></span>
   <% end %>
 </div>
@@ -18,7 +14,7 @@ Click <%= link_to "here", new_two_factor_authentication_path %> if you want to g
 <div>
   <%= form_tag(user_two_factor_authentication_path, method: "put", class: "form") do %>
     <div class="form-group">
-      <%= label_tag(:code, "<b>2. Enter the six-digit code that was sent to your phone</b>".html_safe) %>
+      <%= label_tag(:code, "<b>Enter the six-digit code that was sent to your email</b>".html_safe) %>
       <%= text_field_tag(:code, nil, class: "form-control", placeholder: "123456") %>
     </div>
     <%= submit_tag("Enable two-factor authentication", class: "btn btn-success") %>
